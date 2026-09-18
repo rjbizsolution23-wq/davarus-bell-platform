@@ -5,56 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First-Time Buyer & ITIN Mortgage Qualification | Davarus Bell Realtor®</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#070d1e', darkCard: '#0f172a', brandBlue: '#2563eb', sky: '#0ea5e9', gold: '#f59e0b' },
-                    fontFamily: { head: ['Space Grotesk', 'sans-serif'], body: ['Inter', 'sans-serif'] }
+                    colors: {
+                        gold: { DEFAULT: '#D8B66A', dark: '#B8924B' },
+                        estate: { DEFAULT: '#18352E', light: '#80A99D' },
+                        canvas: '#08100E',
+                        surface: 'rgba(16, 32, 27, 0.75)',
+                        muted: '#AAB5B0',
+                        success: '#3FD28B'
+                    },
+                    fontFamily: {
+                        serif: ['DM Serif Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
                 }
             }
         }
     </script>
     <style>
         .glass-panel {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
         }
         .glass-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: #10201B;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .shimmer-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #2563eb 100%);
-            background-size: 200% auto;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .shimmer-gold {
+            background: linear-gradient(135deg, #D8B66A 0%, #B8924B 100%);
+            transition: all 0.3s ease;
         }
-        .shimmer-btn:hover {
-            background-position: right center;
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5);
+        .shimmer-gold:hover {
+            box-shadow: 0 10px 25px -5px rgba(216, 182, 106, 0.4);
             transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-[#070d1e] text-slate-100 font-body min-h-screen flex flex-col justify-between antialiased">
+<body class="bg-[#08100E] text-[#F6F7F4] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-canvas">
 
     <!-- NAV WITH DAVARUS PORTRAIT -->
-    <nav class="bg-[#070d1e]/80 border-b border-white/10 py-4 px-6 backdrop-blur-2xl sticky top-0 z-50">
+    <nav class="bg-[#08100E]/80 border-b border-white/10 py-4 px-6 backdrop-blur-2xl sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="/" class="flex items-center gap-3">
-                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border-2 border-sky">
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border-2 border-gold">
                 <div>
-                    <span class="font-head font-bold text-base text-white block leading-none">DAVARUS BELL</span>
-                    <span class="text-[10px] text-sky font-semibold uppercase">HGTV Realtor® • Buyer & ITIN Wizard</span>
+                    <span class="font-serif text-xl text-white block leading-none">DAVARUS BELL</span>
+                    <span class="text-[10px] text-gold font-semibold uppercase tracking-wider block">Estate Glass OS • Buyer & ITIN Qualification</span>
                 </div>
             </a>
-            <a href="tel:8176179654" class="text-sky text-xs sm:text-sm font-semibold hover:underline">📞 (817) 617-9654</a>
+            <a href="tel:8176179654" class="text-gold text-xs sm:text-sm font-bold hover:underline">📞 (817) 617-9654</a>
         </div>
     </nav>
 
@@ -62,16 +68,16 @@
     <main class="max-w-6xl mx-auto px-4 py-10 w-full grid lg:grid-cols-12 gap-8 items-start">
         
         <!-- LEFT: MULTI-STEP QUIZ WIZARD -->
-        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-3xl relative">
+        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 relative">
             
             <!-- PROGRESS BAR -->
             <div class="mb-6">
-                <div class="flex justify-between text-xs font-bold text-slate-400 mb-2">
-                    <span id="stepLabel" class="text-sky">STEP 1 OF 3: GOAL & FINANCING</span>
-                    <span id="stepPct">33% Complete</span>
+                <div class="flex justify-between text-xs font-bold text-muted mb-2">
+                    <span id="stepLabel" class="text-gold">STEP 1 OF 3: GOAL & FINANCING</span>
+                    <span id="stepPct" class="text-white">33% Complete</span>
                 </div>
-                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div id="progressBar" class="bg-gradient-to-r from-brandBlue to-sky h-full w-1/3 transition-all duration-300"></div>
+                <div class="w-full bg-[#10201B] h-2 rounded-full overflow-hidden border border-white/10">
+                    <div id="progressBar" class="bg-gradient-to-r from-gold to-gold-dark h-full w-1/3 transition-all duration-300"></div>
                 </div>
             </div>
 
@@ -79,49 +85,49 @@
                 
                 <!-- STEP 1: GOAL & LOAN TYPE -->
                 <div id="step1" class="wizard-step">
-                    <h2 class="font-head font-extrabold text-2xl sm:text-3xl text-white mb-2">What is your primary buying goal?</h2>
-                    <p class="text-slate-400 text-xs mb-6">Select your situation for customized loan program matching:</p>
+                    <h2 class="font-serif text-3xl text-white mb-2">What is your primary home buying goal?</h2>
+                    <p class="text-muted text-xs mb-6">Select your situation for customized loan program matching:</p>
                     
                     <div class="space-y-3">
-                        <label class="flex items-center gap-3.5 p-4 rounded-2xl glass-card cursor-pointer hover:border-sky transition">
-                            <input type="radio" name="goal" value="First-Time Buyer" checked class="accent-sky w-4 h-4">
+                        <label class="flex items-center gap-3.5 p-4 rounded-2xl glass-card cursor-pointer hover:border-gold transition">
+                            <input type="radio" name="goal" value="First-Time Buyer" checked class="accent-gold w-4 h-4">
                             <div>
                                 <div class="font-semibold text-white text-sm">First-Time Buyer in DFW / Texas</div>
-                                <div class="text-xs text-slate-400">Qualify for FHA, VA, or Down Payment Assistance</div>
+                                <div class="text-xs text-muted">Qualify for FHA, VA, USDA, or Down Payment Assistance</div>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-3.5 p-4 rounded-2xl glass-card cursor-pointer hover:border-sky transition">
-                            <input type="radio" name="goal" value="ITIN Financing" class="accent-sky w-4 h-4">
+                        <label class="flex items-center gap-3.5 p-4 rounded-2xl glass-card cursor-pointer hover:border-gold transition">
+                            <input type="radio" name="goal" value="ITIN Financing" class="accent-gold w-4 h-4">
                             <div>
                                 <div class="font-semibold text-white text-sm">ITIN Loan (Individual Taxpayer ID)</div>
-                                <div class="text-xs text-slate-400">Buy property with non-standard income or credit history</div>
+                                <div class="text-xs text-muted">Buy property with Tax ID number & non-standard credit</div>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-3.5 p-4 rounded-2xl glass-card cursor-pointer hover:border-sky transition">
-                            <input type="radio" name="goal" value="Relocation" class="accent-sky w-4 h-4">
+                        <label class="flex items-center gap-3.5 p-4 rounded-2xl glass-card cursor-pointer hover:border-gold transition">
+                            <input type="radio" name="goal" value="Relocation" class="accent-gold w-4 h-4">
                             <div>
-                                <div class="font-semibold text-white text-sm">Out-of-State Relocation</div>
-                                <div class="text-xs text-slate-400">Moving to Dallas, Houston, or Austin from another state</div>
+                                <div class="font-semibold text-white text-sm">Out-of-State Relocation to Texas</div>
+                                <div class="text-xs text-muted">Moving to Dallas, Houston, or Austin from another state</div>
                             </div>
                         </label>
                     </div>
 
-                    <button type="button" onclick="nextStep(2)" class="w-full mt-6 shimmer-btn text-white font-head font-bold text-base py-4 rounded-2xl shadow-lg">
+                    <button type="button" onclick="nextStep(2)" class="w-full mt-6 shimmer-gold text-canvas font-bold text-sm uppercase py-4 rounded-xl shadow-xl">
                         Next: Budget & Timeline →
                     </button>
                 </div>
 
                 <!-- STEP 2: TIMELINE & BUDGET -->
                 <div id="step2" class="wizard-step hidden">
-                    <h2 class="font-head font-extrabold text-2xl sm:text-3xl text-white mb-2">Budget & Move Timeline</h2>
-                    <p class="text-slate-400 text-xs mb-6">Help us filter available homes in your target price range:</p>
+                    <h2 class="font-serif text-3xl text-white mb-2">Budget & Move Timeline</h2>
+                    <p class="text-muted text-xs mb-6">Help us filter available properties in your price range:</p>
 
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-2">Target Price Range</label>
-                            <select id="budget_range" class="w-full bg-[#070d1e] border border-white/10 rounded-2xl p-4 text-white focus:border-sky text-sm">
+                            <label class="block text-xs font-semibold text-muted mb-2 uppercase tracking-wider">Target Price Range</label>
+                            <select id="budget_range" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-4 text-white focus:border-gold text-sm">
                                 <option value="$250k - $350k">$250,000 – $350,000</option>
                                 <option value="$350k - $500k" selected>$350,000 – $500,000</option>
                                 <option value="$500k - $750k">$500,000 – $750,000</option>
@@ -130,8 +136,8 @@
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-2">Move-In Timeline</label>
-                            <select id="timeline" class="w-full bg-[#070d1e] border border-white/10 rounded-2xl p-4 text-white focus:border-sky text-sm">
+                            <label class="block text-xs font-semibold text-muted mb-2 uppercase tracking-wider">Move-In Timeline</label>
+                            <select id="timeline" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-4 text-white focus:border-gold text-sm">
                                 <option value="Immediately (30-60 Days)">Immediately (Within 30–60 Days)</option>
                                 <option value="3-6 Months">3 to 6 Months</option>
                                 <option value="6-12 Months">6 to 12 Months</option>
@@ -140,34 +146,34 @@
                     </div>
 
                     <div class="flex gap-3 mt-6">
-                        <button type="button" onclick="nextStep(1)" class="w-1/3 bg-slate-800 text-slate-300 font-head font-semibold py-4 rounded-2xl">← Back</button>
-                        <button type="button" onclick="nextStep(3)" class="w-2/3 shimmer-btn text-white font-head font-bold py-4 rounded-2xl shadow-lg">Next: Contact Info →</button>
+                        <button type="button" onclick="nextStep(1)" class="w-1/3 bg-[#10201B] border border-white/10 text-slate-300 font-semibold py-4 rounded-xl">← Back</button>
+                        <button type="button" onclick="nextStep(3)" class="w-2/3 shimmer-gold text-canvas font-bold py-4 rounded-xl uppercase shadow-xl">Next: Contact Info →</button>
                     </div>
                 </div>
 
                 <!-- STEP 3: CONTACT & SUBMIT -->
                 <div id="step3" class="wizard-step hidden">
-                    <h2 class="font-head font-extrabold text-2xl sm:text-3xl text-white mb-2">Receive Your Home Matches</h2>
-                    <p class="text-slate-400 text-xs mb-6">Where should Davarus Bell send your pre-qualification report?</p>
+                    <h2 class="font-serif text-3xl text-white mb-2">Receive Your Home Matches</h2>
+                    <p class="text-muted text-xs mb-6">Where should Davarus Bell send your pre-qualification report?</p>
 
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
-                            <input type="text" id="full_name" required placeholder="Davarus Bell" class="w-full bg-[#070d1e] border border-white/10 rounded-2xl p-4 text-white text-sm focus:border-sky">
+                            <label class="block text-xs font-semibold text-muted mb-1 uppercase tracking-wider">Full Name</label>
+                            <input type="text" id="full_name" required placeholder="Davarus Bell" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-4 text-white text-sm focus:border-gold">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Cell Phone Number (For Instant SMS)</label>
-                            <input type="tel" id="phone" required placeholder="(817) 617-9654" class="w-full bg-[#070d1e] border border-white/10 rounded-2xl p-4 text-white text-sm focus:border-sky">
+                            <label class="block text-xs font-semibold text-muted mb-1 uppercase tracking-wider">Cell Phone Number (For Instant SMS)</label>
+                            <input type="tel" id="phone" required placeholder="(817) 617-9654" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-4 text-white text-sm focus:border-gold">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
-                            <input type="email" id="email" required placeholder="you@domain.com" class="w-full bg-[#070d1e] border border-white/10 rounded-2xl p-4 text-white text-sm focus:border-sky">
+                            <label class="block text-xs font-semibold text-muted mb-1 uppercase tracking-wider">Email Address</label>
+                            <input type="email" id="email" required placeholder="you@domain.com" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-4 text-white text-sm focus:border-gold">
                         </div>
                     </div>
 
                     <div class="flex gap-3 mt-6">
-                        <button type="button" onclick="nextStep(2)" class="w-1/3 bg-slate-800 text-slate-300 font-head font-semibold py-4 rounded-2xl">← Back</button>
-                        <button type="submit" id="submitBtn" class="w-2/3 shimmer-btn text-white font-head font-bold text-sm py-4 rounded-2xl shadow-lg">GET MATCHES NOW 🔓</button>
+                        <button type="button" onclick="nextStep(2)" class="w-1/3 bg-[#10201B] border border-white/10 text-slate-300 font-semibold py-4 rounded-xl">← Back</button>
+                        <button type="submit" id="submitBtn" class="w-2/3 shimmer-gold text-canvas font-bold text-sm py-4 rounded-xl uppercase shadow-xl">GET MATCHES NOW 🔓</button>
                     </div>
                 </div>
 
@@ -175,7 +181,7 @@
 
             <div id="resultMsg" class="hidden mt-6 p-6 rounded-2xl bg-emerald-900/40 border border-emerald-500 text-emerald-200 text-center">
                 <div class="text-3xl mb-2">🎉</div>
-                <div class="font-head font-bold text-xl text-white mb-1">Pre-Qualification Submitted!</div>
+                <div class="font-serif text-2xl text-white mb-1">Pre-Qualification Submitted!</div>
                 <p class="text-xs text-emerald-300">Your details have been routed directly to Davarus Bell. Check your mobile phone for an instant SMS confirmation!</p>
             </div>
         </div>
@@ -184,52 +190,52 @@
         <div class="lg:col-span-5 space-y-6">
             
             <!-- DAVARUS BIO CARD -->
-            <div class="glass-panel p-6 rounded-3xl flex items-center gap-4">
-                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-16 h-16 rounded-full object-cover border-2 border-sky shadow-lg">
+            <div class="glass-panel p-6 flex items-center gap-4">
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-16 h-16 rounded-full object-cover border-2 border-gold shadow-lg">
                 <div>
                     <span class="text-[10px] font-bold text-gold uppercase tracking-wider">HGTV Realtor®</span>
-                    <h3 class="font-head font-bold text-lg text-white">Davarus Bell</h3>
-                    <p class="text-xs text-slate-400">"My career is built on communication, transparency & fun!"</p>
+                    <h3 class="font-serif text-xl text-white">Davarus Bell</h3>
+                    <p class="text-xs text-muted">"My career is built on communication, transparency & fun!"</p>
                 </div>
             </div>
 
             <!-- LIVE CALCULATOR -->
-            <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between">
+            <div class="glass-panel p-6 flex flex-col justify-between">
                 <div>
-                    <span class="text-sky text-xs font-bold uppercase tracking-wider">Live Tool</span>
-                    <h3 class="font-head font-bold text-xl text-white mt-1">Mortgage Estimator</h3>
-                    <p class="text-slate-400 text-xs mt-1">Adjust sliders to calculate estimated monthly payment:</p>
+                    <span class="text-gold text-xs font-bold uppercase tracking-wider">Live Tool</span>
+                    <h3 class="font-serif text-2xl text-white mt-1">Mortgage Estimator</h3>
+                    <p class="text-muted text-xs mt-1">Adjust sliders to calculate estimated monthly payment:</p>
 
                     <div class="mt-6 space-y-5">
                         <div>
                             <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1">
                                 <span>Home Price</span>
-                                <span id="priceVal" class="text-sky font-bold">$350,000</span>
+                                <span id="priceVal" class="text-gold font-bold">$350,000</span>
                             </div>
-                            <input type="range" id="priceSlider" min="150000" max="1000000" step="10000" value="350000" class="w-full accent-sky bg-slate-800">
+                            <input type="range" id="priceSlider" min="150000" max="1000000" step="10000" value="350000" class="w-full accent-gold bg-[#10201B]">
                         </div>
 
                         <div>
                             <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1">
                                 <span>Down Payment (3.5% FHA / 10% ITIN)</span>
-                                <span id="downVal" class="text-sky font-bold">$12,250 (3.5%)</span>
+                                <span id="downVal" class="text-gold font-bold">$12,250 (3.5%)</span>
                             </div>
-                            <input type="range" id="downSlider" min="3.5" max="20" step="0.5" value="3.5" class="w-full accent-sky bg-slate-800">
+                            <input type="range" id="downSlider" min="3.5" max="20" step="0.5" value="3.5" class="w-full accent-gold bg-[#10201B]">
                         </div>
 
                         <div>
                             <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1">
                                 <span>Interest Rate</span>
-                                <span id="rateVal" class="text-sky font-bold">6.5%</span>
+                                <span id="rateVal" class="text-gold font-bold">6.5%</span>
                             </div>
-                            <input type="range" id="rateSlider" min="4.5" max="9.5" step="0.25" value="6.5" class="w-full accent-sky bg-slate-800">
+                            <input type="range" id="rateSlider" min="4.5" max="9.5" step="0.25" value="6.5" class="w-full accent-gold bg-[#10201B]">
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-6 p-5 rounded-2xl bg-[#070d1e] border border-white/10 text-center">
-                    <div class="text-xs text-slate-400 uppercase font-semibold">Estimated Monthly Payment</div>
-                    <div id="monthlyEst" class="font-head font-extrabold text-3xl text-emerald-400 mt-1">$2,134 / mo</div>
+                <div class="mt-6 p-5 rounded-2xl bg-[#10201B] border border-white/10 text-center">
+                    <div class="text-xs text-muted uppercase font-semibold">Estimated Monthly Payment</div>
+                    <div id="monthlyEst" class="font-serif text-3xl text-emerald-400 font-bold mt-1">$2,134 / mo</div>
                     <div class="text-[10px] text-slate-500 mt-1">Principal & Interest (Taxes/Insurance estimated separately)</div>
                 </div>
             </div>
