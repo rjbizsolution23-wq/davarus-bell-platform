@@ -3,81 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davarus Bell CRM — Lead Intelligence Dashboard</title>
+    <title>Davarus Bell CRM — Lead Intelligence Dashboard — Estate Glass OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#0f172a', brandBlue: '#2563eb', sky: '#0ea5e9', darkCard: '#1e293b' },
-                    fontFamily: { head: ['Space Grotesk', 'sans-serif'], body: ['Inter', 'sans-serif'] }
+                    colors: { gold: { DEFAULT: '#D8B66A', dark: '#B8924B' }, estate: '#18352E', canvas: '#08100E', muted: '#AAB5B0', success: '#3FD28B' },
+                    fontFamily: { serif: ['DM Serif Display', 'serif'], sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
     </script>
+    <style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            backdrop-filter: blur(24px);
+        }
+        .glass-card { background: #10201B; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .shimmer-gold { background: linear-gradient(135deg, #D8B66A 0%, #B8924B 100%); }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-body min-h-screen">
+<body class="bg-[#08100E] text-[#F6F7F4] font-sans antialiased min-h-screen">
 
-    <header class="bg-slate-900 border-b border-slate-800 p-4 sticky top-0 z-50">
+    <header class="bg-[#10201B] border-b border-white/10 p-4 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brandBlue to-sky flex items-center justify-center font-head font-bold text-white text-xl">DB</div>
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border-2 border-gold">
                 <div>
-                    <h1 class="font-head font-bold text-lg text-white">DAVARUS BELL CRM DASHBOARD</h1>
-                    <p class="text-xs text-slate-400">Live D1 Edge Database • Real-Time Speed-to-Lead Engine</p>
+                    <h1 class="font-serif text-lg text-white">DAVARUS BELL CRM DASHBOARD</h1>
+                    <p class="text-xs text-gold">Live Cloudflare D1 Edge Database • Speed-to-Lead Engine</p>
                 </div>
             </div>
             <div class="flex items-center gap-3">
-                <button onclick="fetchLeads()" class="bg-brandBlue text-white text-xs font-semibold px-4 py-2 rounded-xl">🔄 Refresh Leads</button>
-                <a href="/index.html" class="text-xs text-slate-400 hover:text-white">← Public Platform</a>
+                <button onclick="fetchLeads()" class="shimmer-gold text-canvas text-xs font-bold px-4 py-2 rounded-xl uppercase">🔄 Refresh Leads</button>
+                <a href="/" class="text-xs text-muted hover:text-white">← Public Platform</a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-8">
         
         <!-- METRICS COUNTERS -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-                <div class="text-xs text-slate-400 font-semibold uppercase">Total Leads Captured</div>
-                <div id="metricTotal" class="font-head font-extrabold text-3xl text-white mt-1">--</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-panel p-5">
+                <div class="text-xs text-muted uppercase font-semibold">Total Leads Captured</div>
+                <div id="metricTotal" class="font-serif font-bold text-3xl text-white mt-1">--</div>
             </div>
-            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-                <div class="text-xs text-slate-400 font-semibold uppercase">First-Time Buyers & ITIN</div>
-                <div id="metricBuyers" class="font-head font-extrabold text-3xl text-sky mt-1">--</div>
+            <div class="glass-panel p-5">
+                <div class="text-xs text-muted uppercase font-semibold">First-Time Buyers & ITIN</div>
+                <div id="metricBuyers" class="font-serif font-bold text-3xl text-gold mt-1">--</div>
             </div>
-            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-                <div class="text-xs text-slate-400 font-semibold uppercase">Sellers & Net Sheets</div>
-                <div id="metricSellers" class="font-head font-extrabold text-3xl text-emerald-400 mt-1">--</div>
+            <div class="glass-panel p-5">
+                <div class="text-xs text-muted uppercase font-semibold">Sellers & Net Sheets</div>
+                <div id="metricSellers" class="font-serif font-bold text-3xl text-emerald-400 mt-1">--</div>
             </div>
-            <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-                <div class="text-xs text-slate-400 font-semibold uppercase">Relocation & Speaking</div>
-                <div id="metricOther" class="font-head font-extrabold text-3xl text-gold mt-1">--</div>
+            <div class="glass-panel p-5">
+                <div class="text-xs text-muted uppercase font-semibold">Relocation & Speaking</div>
+                <div id="metricOther" class="font-serif font-bold text-3xl text-sky-400 mt-1">--</div>
             </div>
         </div>
 
         <!-- SEARCH AND TABLE -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-            <div class="p-5 border-b border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <h2 class="font-head font-bold text-xl text-white">Live Inbound Leads</h2>
-                <input type="text" id="searchInput" oninput="filterTable()" placeholder="Search lead name, phone, or location..." class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:border-sky w-full sm:w-72">
+        <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl">
+            <div class="p-5 border-b border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <h2 class="font-serif text-2xl text-white">Live Inbound Lead Pipeline</h2>
+                <input type="text" id="searchInput" oninput="filterTable()" placeholder="Search lead name, phone, or location..." class="bg-[#10201B] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:border-gold w-full sm:w-72">
             </div>
 
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm text-slate-300">
-                    <thead class="bg-slate-950 text-xs font-semibold text-slate-400 uppercase border-b border-slate-800">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-[#10201B] text-[10px] font-semibold text-muted uppercase border-b border-white/10">
                         <tr>
-                            <th class="p-4">Contact</th>
-                            <th class="p-4">Type</th>
+                            <th class="p-4">Contact Details</th>
+                            <th class="p-4">Classification</th>
                             <th class="p-4">Timeline / Budget</th>
                             <th class="p-4">Notes / Details</th>
-                            <th class="p-4">Actions</th>
+                            <th class="p-4">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="leadsTableBody" class="divide-y divide-slate-800">
+                    <tbody id="leadsTableBody" class="divide-y divide-white/10">
                         <tr>
-                            <td colspan="5" class="p-8 text-center text-slate-500">Loading live leads from D1 Database...</td>
+                            <td colspan="5" class="p-8 text-center text-muted">Loading live leads from D1 Database...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -97,7 +107,6 @@
                 if (data.leads && data.leads.length > 0) {
                     allLeads = data.leads;
                 } else {
-                    // Demo fallback leads if database is fresh
                     allLeads = [
                         { id: '1', full_name: 'Marcus Vance', phone: '(214) 555-0192', email: 'marcus@example.com', lead_type: 'buyer', timeline: '30-60 Days', budget_range: '$350k - $500k', notes: 'Goal: First-Time Buyer | FHA Loan Pre-Approval' },
                         { id: '2', full_name: 'Elena Rodriguez', phone: '(817) 555-4821', email: 'elena@example.com', lead_type: 'buyer', timeline: '3-6 Months', budget_range: '$250k - $350k', notes: 'Goal: ITIN Financing | Tax ID Buyer' },
@@ -123,24 +132,24 @@
                 else other++;
 
                 const row = document.createElement('tr');
-                row.className = 'hover:bg-slate-850 transition';
+                row.className = 'hover:bg-white/5 transition';
                 row.innerHTML = `
                     <td class="p-4 font-semibold text-white">
                         ${l.full_name}<br>
-                        <span class="text-xs text-sky font-normal">${l.phone} • ${l.email}</span>
+                        <span class="text-[11px] text-gold font-normal">${l.phone} • ${l.email}</span>
                     </td>
                     <td class="p-4">
-                        <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase ${l.lead_type === 'buyer' ? 'bg-brandBlue/20 text-sky' : l.lead_type === 'seller' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-gold/20 text-gold'}">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ${l.lead_type === 'buyer' ? 'bg-gold/20 text-gold' : l.lead_type === 'seller' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-sky-500/20 text-sky-400'}">
                             ${l.lead_type}
                         </span>
                     </td>
                     <td class="p-4 text-xs">
-                        <span class="text-slate-300 font-semibold">${l.timeline || 'N/A'}</span><br>
-                        <span class="text-slate-400">${l.budget_range || ''}</span>
+                        <span class="text-white font-semibold">${l.timeline || 'N/A'}</span><br>
+                        <span class="text-muted">${l.budget_range || ''}</span>
                     </td>
-                    <td class="p-4 text-xs text-slate-400 max-w-xs truncate">${l.notes || 'No extra notes'}</td>
+                    <td class="p-4 text-xs text-muted max-w-xs truncate">${l.notes || 'No extra notes'}</td>
                     <td class="p-4">
-                        <a href="tel:${l.phone}" class="bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg hover:bg-emerald-500 transition">📞 Call</a>
+                        <a href="tel:${l.phone}" class="shimmer-gold text-canvas text-[11px] font-bold px-3 py-1.5 rounded-lg">📞 Call Lead</a>
                     </td>
                 `;
                 body.appendChild(row);
