@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Davarus Bell | Keynote Speaker & Media Personality</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { navy: '#0f172a', brandBlue: '#2563eb', sky: '#0ea5e9', gold: '#f59e0b' },
+                    fontFamily: { head: ['Space Grotesk', 'sans-serif'], body: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-body min-h-screen flex flex-col justify-between">
+    <nav class="bg-slate-950 border-b border-slate-800 py-4 px-6">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="/" class="font-head font-bold text-lg text-white">DAVARUS BELL <span class="text-gold text-xs font-normal">| KEYNOTE SPEAKER</span></a>
+            <a href="tel:8176179654" class="text-sky text-sm font-semibold">📞 (817) 617-9654</a>
+        </div>
+    </nav>
+
+    <main class="max-w-xl mx-auto px-4 py-12 w-full">
+        <div class="bg-slate-800/90 border border-slate-700/90 p-8 rounded-2xl shadow-2xl backdrop-blur-md">
+            <div class="text-center mb-8">
+                <span class="bg-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fitness. Finance. Focus. Freedom.</span>
+                <h1 class="font-head font-bold text-3xl text-white mt-3">Book Davarus Bell For Keynotes & Media</h1>
+                <p class="text-slate-400 text-sm mt-2">HGTV Realtor®, entrepreneur, and motivational speaker on personal transformation, real estate wealth, and sales discipline.</p>
+            </div>
+
+            <form id="speakingForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Organization / Event Name</label>
+                    <input type="text" id="event_name" required placeholder="Company / Association / Conference Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3.5 text-white focus:border-sky focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Keynote Topic of Interest</label>
+                    <select id="topic" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3.5 text-white focus:border-sky focus:outline-none">
+                        <option value="Adversity to Authority">From Adversity to Authority: Personal Reinvention</option>
+                        <option value="Move Different Real Estate">Move Different: Building Wealth Through Real Estate</option>
+                        <option value="4 Pillars Peak Execution">Fitness. Finance. Focus. Freedom (4 Pillars)</option>
+                        <option value="Media / Podcast Appearance">Media Interview / Podcast Guesting</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Event Date & Location</label>
+                    <input type="text" id="event_details" required placeholder="Date, City, or Virtual Event" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3.5 text-white focus:border-sky focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Contact Person Name</label>
+                    <input type="text" id="full_name" required placeholder="Your Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3.5 text-white focus:border-sky focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="(817) 617-9654" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3.5 text-white focus:border-sky focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
+                    <input type="email" id="email" required placeholder="you@domain.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3.5 text-white focus:border-sky focus:outline-none">
+                </div>
+                <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-gold via-amber-500 to-brandBlue text-slate-950 font-head font-bold text-lg py-4 rounded-xl shadow-lg hover:opacity-95 transition">
+                    SUBMIT SPEAKING REQUEST 🎤
+                </button>
+            </form>
+
+            <div id="resultMsg" class="hidden mt-6 p-4 rounded-xl bg-emerald-900/50 border border-emerald-500 text-emerald-200 text-center font-semibold">
+                🎉 Speaking inquiry received! Davarus Bell’s team will review your event details and respond within 24 hours.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 py-6 text-center text-xs text-slate-500">
+        Davarus Bell Media & Keynotes • All Rights Reserved
+    </footer>
+
+    <script>
+        document.getElementById('speakingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Submitting Request...';
+            btn.disabled = true;
+
+            const payload = {
+                full_name: document.getElementById('full_name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                lead_type: 'speaking',
+                timeline: document.getElementById('event_details').value,
+                notes: 'Event: ' + document.getElementById('event_name').value + ' | Topic: ' + document.getElementById('topic').value
+            };
+
+            try {
+                const res = await fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('speakingForm').classList.add('hidden');
+                    document.getElementById('resultMsg').classList.remove('hidden');
+                }
+            } catch (err) {
+                alert('Error submitting speaking request.');
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "davarus-bell-platform",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-02-08",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "davarus-db",
+      "database_id": "davarus-bell-d1-prod"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "BRAND_NAME": "Davarus Bell Brand OS",
+    "SUPPORT_EMAIL": "support@rjbusinesssolutions.org",
+    "PHONE_NUMBER": "817-617-9654"
+  }
+}
