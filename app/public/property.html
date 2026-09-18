@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4812 Ridgeview Dr, Frisco TX | Davarus Bell Estate Glass OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { gold: { DEFAULT: '#D8B66A', dark: '#B8924B' }, estate: '#18352E', canvas: '#08100E', muted: '#AAB5B0', success: '#3FD28B' },
+                    fontFamily: { serif: ['DM Serif Display', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            backdrop-filter: blur(24px);
+        }
+        .glass-card { background: #10201B; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .shimmer-gold { background: linear-gradient(135deg, #D8B66A 0%, #B8924B 100%); }
+    </style>
+</head>
+<body class="bg-[#08100E] text-[#F6F7F4] font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAV -->
+    <nav class="bg-[#08100E]/80 backdrop-blur-2xl border-b border-white/10 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/search" class="text-xs text-muted hover:text-white">← Back to Property Search</a>
+            <div class="flex items-center gap-3">
+                <a href="tel:8176179654" class="text-gold text-xs font-bold">📞 (817) 617-9654</a>
+                <a href="#schedule" class="shimmer-gold text-canvas text-xs font-bold px-4 py-2 rounded-full uppercase">Book Private Tour →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FULL SCREEN PROPERTY GALLERY -->
+    <section class="max-w-7xl mx-auto px-4 py-6 w-full grid grid-cols-12 gap-4">
+        <div class="col-span-12 lg:col-span-8 h-96 lg:h-[480px] rounded-3xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80" alt="4812 Ridgeview Dr" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-estate text-gold font-bold text-xs px-3 py-1.5 rounded-full uppercase">MLS #2049182 • Active</div>
+            <div class="absolute bottom-4 left-4 font-serif text-4xl text-white font-bold">$485,000</div>
+        </div>
+        <div class="hidden lg:grid col-span-4 grid-rows-2 gap-4 h-[480px]">
+            <div class="rounded-3xl overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Kitchen" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-3xl overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Master Bedroom" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PROPERTY DETAILS & STICKY SHOWING PANEL -->
+    <main class="max-w-7xl mx-auto px-4 py-6 w-full flex-1 grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- LEFT: SPECIFICATIONS & NEIGHBORHOOD -->
+        <div class="lg:col-span-7 space-y-8">
+            <div class="glass-panel p-8">
+                <h1 class="font-serif text-3xl sm:text-4xl text-white">4812 Ridgeview Dr, Frisco TX 75034</h1>
+                <p class="text-xs text-gold mt-1">North Texas Suburban Estate • Top Frisco ISD Schools</p>
+
+                <div class="grid grid-cols-4 gap-4 mt-6 pt-6 border-t border-white/10 text-center">
+                    <div>
+                        <div class="text-xs text-muted">Bedrooms</div>
+                        <div class="font-serif text-2xl text-white font-bold">4</div>
+                    </div>
+                    <div>
+                        <div class="text-xs text-muted">Bathrooms</div>
+                        <div class="font-serif text-2xl text-white font-bold">3.5</div>
+                    </div>
+                    <div>
+                        <div class="text-xs text-muted">Square Feet</div>
+                        <div class="font-serif text-2xl text-white font-bold">2,850</div>
+                    </div>
+                    <div>
+                        <div class="text-xs text-muted">Lot Size</div>
+                        <div class="font-serif text-2xl text-white font-bold">0.28 Ac</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAYMENT BREAKDOWN SOLID PANEL -->
+            <div class="glass-card p-6 rounded-3xl">
+                <h3 class="font-serif text-xl text-white mb-4">Estimated Monthly Payment Breakdown</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between py-2 border-b border-white/10">
+                        <span class="text-muted">Principal & Interest (6.5% Rate)</span>
+                        <span class="text-white font-bold">$2,380 / mo</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-white/10">
+                        <span class="text-muted">Estimated Property Taxes (Frisco ISD)</span>
+                        <span class="text-white font-bold">$420 / mo</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-white/10">
+                        <span class="text-muted">Homeowners Insurance</span>
+                        <span class="text-white font-bold">$140 / mo</span>
+                    </div>
+                    <div class="flex justify-between py-2">
+                        <span class="text-emerald-400 font-semibold">Total Estimated Payment</span>
+                        <span class="text-emerald-400 font-serif text-lg font-bold">$2,940 / mo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: STICKY PRIVATE TOUR SHOWING PANEL -->
+        <div class="lg:col-span-5" id="schedule">
+            <div class="glass-panel p-8 sticky top-28">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                    <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-14 h-14 rounded-full object-cover border-2 border-gold shadow-lg">
+                    <div>
+                        <span class="text-[10px] text-gold font-semibold uppercase">Listing Agent Advocate</span>
+                        <h4 class="font-serif text-xl text-white">Davarus Bell</h4>
+                        <p class="text-xs text-muted">HGTV Realtor® • Only 1 Realty Group</p>
+                    </div>
+                </div>
+
+                <h3 class="font-serif text-2xl text-white mb-2">Schedule a Private Tour</h3>
+                <p class="text-xs text-muted mb-6">Select your preferred showing date and time:</p>
+
+                <form id="tourForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-muted mb-1 font-semibold uppercase">Preferred Date</label>
+                        <input type="date" required class="w-full bg-[#10201B] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-muted mb-1 font-semibold uppercase">Your Name</label>
+                        <input type="text" required placeholder="Full Name" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-muted mb-1 font-semibold uppercase">Cell Phone (For Confirmation SMS)</label>
+                        <input type="tel" required placeholder="(817) 617-9654" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
+                    </div>
+
+                    <button type="submit" class="w-full shimmer-gold text-canvas font-bold text-sm py-4 rounded-xl shadow-xl uppercase">
+                        CONFIRM TOUR REQUEST 🔒
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#08100E]/90 backdrop-blur-2xl border-t border-white/10 px-4 py-3 flex justify-around items-center text-center text-[10px]">
+        <a href="/" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🏡</span> Home
+        </a>
+        <a href="/search" class="text-gold flex flex-col items-center gap-1 font-semibold">
+            <span class="text-lg">🔍</span> Search
+        </a>
+        <a href="/buy" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🔑</span> Pre-Qual
+        </a>
+        <a href="/portal" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">📋</span> Saved
+        </a>
+        <a href="/agent" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">👤</span> Profile
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050914] py-6 text-center text-xs text-slate-500 border-t border-white/10 mb-16 lg:mb-0">
+        Only 1 Realty Group • License #0798476 • Equal Housing Opportunity
+    </footer>
+
+</body>
+</html>

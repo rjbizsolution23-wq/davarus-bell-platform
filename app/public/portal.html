@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Portal & Saved Listings | Estate Glass OS — Davarus Bell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { gold: { DEFAULT: '#D8B66A', dark: '#B8924B' }, estate: '#18352E', canvas: '#08100E', muted: '#AAB5B0', success: '#3FD28B' },
+                    fontFamily: { serif: ['DM Serif Display', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            backdrop-filter: blur(24px);
+        }
+        .glass-card { background: #10201B; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .shimmer-gold { background: linear-gradient(135deg, #D8B66A 0%, #B8924B 100%); }
+    </style>
+</head>
+<body class="bg-[#08100E] text-[#F6F7F4] font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAV -->
+    <nav class="bg-[#08100E]/80 backdrop-blur-2xl border-b border-white/10 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3">
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border-2 border-gold">
+                <div>
+                    <span class="font-serif text-xl text-white">DAVARUS BELL</span>
+                    <span class="text-[10px] text-gold font-semibold uppercase block">Estate Glass OS • Client Portal</span>
+                </div>
+            </a>
+            <a href="/search" class="text-xs text-gold hover:underline font-semibold">+ Add Property</a>
+        </div>
+    </nav>
+
+    <!-- BUYER PORTAL CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 py-10 w-full flex-1 space-y-8">
+        
+        <!-- HEADER STATUS CARD -->
+        <div class="glass-panel p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <span class="text-xs font-bold text-gold uppercase tracking-widest">Client Dashboard</span>
+                <h1 class="font-serif text-3xl text-white mt-1">Welcome to Your Buyer Portal</h1>
+                <p class="text-xs text-muted mt-1">Assigned Realtor®: <strong class="text-white">Davarus Bell (HGTV Realtor®)</strong></p>
+            </div>
+
+            <!-- PREAPPROVAL TRACKER -->
+            <div class="glass-card p-4 rounded-2xl w-full md:w-auto">
+                <div class="text-[10px] text-muted uppercase font-semibold">Preapproval Status</div>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="font-bold text-sm text-emerald-400">Pre-Qualified (ITIN / FHA)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAVED LISTINGS GRID -->
+        <div class="space-y-4">
+            <h2 class="font-serif text-2xl text-white">Your Saved Properties & Tour Schedule</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- SAVED ITEM 1 -->
+                <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-serif text-lg text-white">4812 Ridgeview Dr, Frisco TX</h3>
+                                <p class="text-xs text-muted">$485,000 • 4 Beds • 3.5 Baths</p>
+                            </div>
+                            <span class="bg-estate text-gold text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Tour Confirmed</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/10 text-xs">
+                        <span class="text-muted">Showing: <strong class="text-white">Tomorrow at 2:00 PM</strong></span>
+                        <a href="/property?id=1" class="text-gold hover:underline font-bold">View Listing →</a>
+                    </div>
+                </div>
+
+                <!-- SAVED ITEM 2 -->
+                <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-serif text-lg text-white">1204 Lakewood Ave, Dallas TX</h3>
+                                <p class="text-xs text-muted">$345,000 • 3 Beds • 2 Baths</p>
+                            </div>
+                            <span class="bg-white/5 text-slate-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Saved</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/10 text-xs">
+                        <span class="text-muted">Est. Payment: <strong class="text-emerald-400">$1,980/mo</strong></span>
+                        <a href="/property?id=2" class="text-gold hover:underline font-bold">View Listing →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#08100E]/90 backdrop-blur-2xl border-t border-white/10 px-4 py-3 flex justify-around items-center text-center text-[10px]">
+        <a href="/" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🏡</span> Home
+        </a>
+        <a href="/search" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🔍</span> Search
+        </a>
+        <a href="/buy" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🔑</span> Pre-Qual
+        </a>
+        <a href="/portal" class="text-gold flex flex-col items-center gap-1 font-semibold">
+            <span class="text-lg">📋</span> Saved
+        </a>
+        <a href="/agent" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">👤</span> Profile
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050914] py-6 text-center text-xs text-slate-500 border-t border-white/10 mb-16 lg:mb-0">
+        Only 1 Realty Group • License #0798476 • Equal Housing Opportunity
+    </footer>
+
+</body>
+</html>

@@ -3,68 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davarus Bell Platform — Cloudflare Live Dev Suite</title>
+    <title>Davarus Bell Platform — Estate Glass OS Live Suite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#0f172a', brandBlue: '#2563eb', sky: '#0ea5e9', gold: '#f59e0b' },
+                    colors: { navy: '#070d1e', gold: '#D8B66A', estate: '#18352E', sky: '#0ea5e9' },
                     fontFamily: { head: ['Space Grotesk', 'sans-serif'], body: ['Inter', 'sans-serif'] }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-body min-h-screen flex flex-col">
+<body class="bg-[#070d1e] text-slate-100 font-body min-h-screen flex flex-col">
 
     <!-- DEV HUB HEADER -->
-    <header class="bg-slate-900 border-b border-slate-800 p-4 sticky top-0 z-50">
+    <header class="bg-[#10201B] border-b border-white/10 p-4 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brandBlue to-sky flex items-center justify-center font-head font-bold text-white text-xl">DB</div>
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border-2 border-gold">
                 <div>
-                    <h1 class="font-head font-bold text-lg text-white">DAVARUS BELL PLATFORM — CLOUDFLARE LIVE SUITE</h1>
-                    <p class="text-xs text-emerald-400 font-semibold">⚡ Deployed Live on Cloudflare Workers Edge & Remote D1 Database</p>
+                    <h1 class="font-head font-bold text-lg text-white">DAVARUS BELL — ESTATE GLASS OS SUITE</h1>
+                    <p class="text-xs text-emerald-400 font-semibold">⚡ Deployed Live on Cloudflare Workers & Remote D1 Database</p>
                 </div>
             </div>
 
-            <!-- VIEWPORT SELECTOR & PAGE SELECTOR -->
-            <div class="flex flex-wrap items-center gap-2">
-                <button onclick="setPage('/')" class="nav-btn bg-brandBlue text-white text-xs font-semibold px-3 py-2 rounded-lg">Home Hub</button>
-                <button onclick="setPage('/buy')" class="nav-btn bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-3 py-2 rounded-lg">Buyer Wizard & Calc</button>
-                <button onclick="setPage('/sell')" class="nav-btn bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-3 py-2 rounded-lg">Seller Net Sheet</button>
-                <button onclick="setPage('/relocate')" class="nav-btn bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-3 py-2 rounded-lg">Texas Relocate</button>
-                <button onclick="setPage('/speaking')" class="nav-btn bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-3 py-2 rounded-lg">Keynotes</button>
-                <button onclick="setPage('/admin')" class="nav-btn bg-emerald-700 text-emerald-100 hover:text-white text-xs font-semibold px-3 py-2 rounded-lg">🔒 CRM Admin</button>
+            <!-- PAGE SELECTOR -->
+            <div class="flex flex-wrap items-center gap-1.5 text-xs">
+                <button onclick="setPage('/')" class="nav-btn bg-gold text-slate-950 font-bold px-3 py-1.5 rounded-lg">1. Home</button>
+                <button onclick="setPage('/search')" class="nav-btn bg-white/5 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg">2. Search</button>
+                <button onclick="setPage('/property')" class="nav-btn bg-white/5 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg">3. Property</button>
+                <button onclick="setPage('/agent')" class="nav-btn bg-white/5 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg">4. Agent Bio</button>
+                <button onclick="setPage('/buy')" class="nav-btn bg-white/5 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg">5. ITIN Quiz</button>
+                <button onclick="setPage('/sell')" class="nav-btn bg-white/5 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg">6. Seller Net Sheet</button>
+                <button onclick="setPage('/portal')" class="nav-btn bg-white/5 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg">7. Buyer Portal</button>
+                <button onclick="setPage('/admin')" class="nav-btn bg-emerald-700 text-white font-bold px-3 py-1.5 rounded-lg">🔒 CRM Admin</button>
 
-                <div class="h-6 w-px bg-slate-800 mx-1"></div>
+                <div class="h-5 w-px bg-white/10 mx-1"></div>
 
-                <button onclick="setViewport('desktop')" id="vp-desktop" class="bg-sky/20 text-sky text-xs font-semibold px-3 py-2 rounded-lg border border-sky/40">🖥️ Desktop</button>
-                <button onclick="setViewport('mobile')" id="vp-mobile" class="bg-slate-800 text-slate-400 text-xs font-semibold px-3 py-2 rounded-lg border border-slate-700">📱 Mobile</button>
+                <button onclick="setViewport('desktop')" id="vp-desktop" class="bg-gold/20 text-gold text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gold/30">🖥️ Desktop</button>
+                <button onclick="setViewport('mobile')" id="vp-mobile" class="bg-white/5 text-slate-400 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-white/10">📱 Mobile</button>
             </div>
         </div>
     </header>
 
     <!-- MAIN PREVIEW CONTAINER -->
-    <main class="flex-1 p-4 bg-slate-950 flex flex-col items-center">
+    <main class="flex-1 p-4 bg-[#08100E] flex flex-col items-center">
         <!-- FRAME WRAPPER -->
-        <div id="frameContainer" class="w-full max-w-7xl h-[85vh] bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 relative">
+        <div id="frameContainer" class="w-full max-w-7xl h-[85vh] bg-[#10201B] border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 relative">
             <iframe id="previewFrame" src="/" class="w-full h-full border-0"></iframe>
         </div>
     </main>
 
     <!-- FOOTER LINK BAR -->
-    <footer class="bg-slate-900 border-t border-slate-800 p-3 text-center text-xs text-slate-400 flex flex-wrap justify-center gap-6">
+    <footer class="bg-[#10201B] border-t border-white/10 p-3 text-center text-xs text-slate-400 flex flex-wrap justify-center gap-4">
         <span>⚡ Live Cloudflare Worker URLs:</span>
-        <a href="/" target="_blank" class="text-sky hover:underline">/ (Home Hub)</a>
-        <a href="/buy" target="_blank" class="text-sky hover:underline">/buy (Buyer Wizard & Calc)</a>
-        <a href="/sell" target="_blank" class="text-sky hover:underline">/sell (Net Sheet)</a>
-        <a href="/relocate" target="_blank" class="text-sky hover:underline">/relocate (Relocation)</a>
-        <a href="/speaking" target="_blank" class="text-sky hover:underline">/speaking (Keynotes)</a>
-        <a href="/admin" target="_blank" class="text-emerald-400 hover:underline">/admin (CRM Admin Dashboard)</a>
-        <a href="/api/health" target="_blank" class="text-sky hover:underline">/api/health (API Status)</a>
+        <a href="/" target="_blank" class="text-gold hover:underline">/ (Home)</a>
+        <a href="/search" target="_blank" class="text-gold hover:underline">/search (Property Search)</a>
+        <a href="/property" target="_blank" class="text-gold hover:underline">/property (Property Detail)</a>
+        <a href="/agent" target="_blank" class="text-gold hover:underline">/agent (Agent Bio)</a>
+        <a href="/buy" target="_blank" class="text-gold hover:underline">/buy (ITIN Quiz)</a>
+        <a href="/sell" target="_blank" class="text-gold hover:underline">/sell (Seller Net Sheet)</a>
+        <a href="/portal" target="_blank" class="text-gold hover:underline">/portal (Buyer Portal)</a>
+        <a href="/admin" target="_blank" class="text-emerald-400 hover:underline">/admin (CRM Admin)</a>
     </footer>
 
     <script>
@@ -80,13 +83,13 @@
             if (type === 'mobile') {
                 container.style.maxWidth = '400px';
                 container.style.height = '780px';
-                mBtn.className = 'bg-sky/20 text-sky text-xs font-semibold px-3 py-2 rounded-lg border border-sky/40';
-                dBtn.className = 'bg-slate-800 text-slate-400 text-xs font-semibold px-3 py-2 rounded-lg border border-slate-700';
+                mBtn.className = 'bg-gold/20 text-gold text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gold/30';
+                dBtn.className = 'bg-white/5 text-slate-400 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-white/10';
             } else {
                 container.style.maxWidth = '100%';
                 container.style.height = '85vh';
-                dBtn.className = 'bg-sky/20 text-sky text-xs font-semibold px-3 py-2 rounded-lg border border-sky/40';
-                mBtn.className = 'bg-slate-800 text-slate-400 text-xs font-semibold px-3 py-2 rounded-lg border border-slate-700';
+                dBtn.className = 'bg-gold/20 text-gold text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gold/30';
+                mBtn.className = 'bg-white/5 text-slate-400 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-white/10';
             }
         }
     </script>

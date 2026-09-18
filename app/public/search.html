@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Search & Map | Estate Glass OS — Davarus Bell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { gold: { DEFAULT: '#D8B66A', dark: '#B8924B' }, estate: '#18352E', canvas: '#08100E', muted: '#AAB5B0', success: '#3FD28B' },
+                    fontFamily: { serif: ['DM Serif Display', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            backdrop-filter: blur(24px);
+        }
+        .glass-card { background: #10201B; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .shimmer-gold { background: linear-gradient(135deg, #D8B66A 0%, #B8924B 100%); }
+    </style>
+</head>
+<body class="bg-[#08100E] text-[#F6F7F4] font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAV -->
+    <nav class="bg-[#08100E]/80 backdrop-blur-2xl border-b border-white/10 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3">
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border-2 border-gold">
+                <div>
+                    <span class="font-serif text-xl text-white">DAVARUS BELL</span>
+                    <span class="text-[10px] text-gold font-semibold uppercase block">Estate Glass OS • Property Search</span>
+                </div>
+            </a>
+            <a href="/buy" class="shimmer-gold text-canvas text-xs font-bold px-4 py-2 rounded-full uppercase">ITIN / FHA Pre-Qual →</a>
+        </div>
+    </nav>
+
+    <!-- SEARCH & FILTER BAR -->
+    <div class="bg-[#10201B] border-b border-white/10 p-4 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-3 justify-between items-center">
+            <div class="w-full md:w-96 relative">
+                <input type="text" id="searchInput" oninput="filterProperties()" placeholder="Search Dallas, Frisco, Houston, ZIP 75201..." class="w-full bg-[#08100E] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:border-gold focus:outline-none">
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-2 text-xs">
+                <button onclick="setFilter('all')" class="filter-btn bg-gold text-canvas font-bold px-3.5 py-2 rounded-lg">All Properties</button>
+                <button onclick="filterType('itin')" class="filter-btn bg-white/5 border border-white/10 text-slate-300 hover:text-white px-3.5 py-2 rounded-lg">ITIN Approved</button>
+                <button onclick="filterType('fha')" class="filter-btn bg-white/5 border border-white/10 text-slate-300 hover:text-white px-3.5 py-2 rounded-lg">FHA / Zero-Down</button>
+                <button onclick="filterType('luxury')" class="filter-btn bg-white/5 border border-white/10 text-slate-300 hover:text-white px-3.5 py-2 rounded-lg">Luxury ($500k+)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SEARCH CONTENT (GRID + MAP SIMULATOR) -->
+    <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-1 grid lg:grid-cols-12 gap-8">
+        
+        <!-- LEFT: PROPERTY CARDS GRID -->
+        <div class="lg:col-span-7 space-y-6">
+            <div class="flex justify-between items-center text-xs text-muted">
+                <span id="resultCount">Showing 4 Verified Properties</span>
+                <span>Sorted by: <strong class="text-white">Davarus Choice</strong></span>
+            </div>
+
+            <div class="space-y-6" id="propertyGrid">
+                
+                <!-- PROPERTY 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="Frisco Luxury Estate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-gold text-canvas font-bold text-[10px] px-3 py-1 rounded-full uppercase">Davarus Featured Choice</div>
+                        <div class="absolute top-3 right-3 bg-estate text-success font-bold text-xs px-3 py-1 rounded-full">ITIN & FHA Approved</div>
+                        <div class="absolute bottom-3 left-3 font-serif text-3xl text-white font-bold">$485,000</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-serif text-xl text-white">4812 Ridgeview Dr, Frisco TX</h3>
+                                <p class="text-xs text-muted">North Texas Suburban Estate • 4 Beds • 3.5 Baths • 2,850 sqft</p>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold">$2,640/mo est</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-white/10 text-xs">
+                            <span class="text-muted">Down Payment: <strong class="text-white">$16,975 (3.5%)</strong></span>
+                            <a href="/property?id=1" class="shimmer-gold text-canvas font-bold px-4 py-2 rounded-lg">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROPERTY 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Dallas Heights Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-estate text-sky font-bold text-[10px] px-3 py-1 rounded-full uppercase">First-Time Buyer Deal</div>
+                        <div class="absolute bottom-3 left-3 font-serif text-3xl text-white font-bold">$345,000</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-serif text-xl text-white">1204 Lakewood Ave, Dallas TX</h3>
+                                <p class="text-xs text-muted">Dallas Core • 3 Beds • 2 Baths • 1,920 sqft</p>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold">$1,980/mo est</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 pt-4 border-t border-white/10 text-xs">
+                            <span class="text-muted">Down Payment: <strong class="text-white">$12,075 (3.5%)</strong></span>
+                            <a href="/property?id=2" class="shimmer-gold text-canvas font-bold px-4 py-2 rounded-lg">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT: INTERACTIVE MAP SIMULATOR & ADVISOR CARD -->
+        <div class="lg:col-span-5 space-y-6">
+            <!-- MAP DISPLAY SIMULATOR -->
+            <div class="glass-panel p-4 h-96 relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="relative z-10 flex justify-between items-center bg-[#08100E]/80 backdrop-blur-md p-3 rounded-xl border border-white/10">
+                    <span class="text-xs font-bold text-white">📍 Interactive DFW Map Layer</span>
+                    <span class="text-[10px] text-gold font-semibold uppercase">Mapbox Powered</span>
+                </div>
+                
+                <div class="relative z-10 bg-[#08100E]/90 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center">
+                    <p class="text-xs text-muted mb-2">Want to draw custom search boundaries on the map?</p>
+                    <a href="/buy" class="shimmer-gold text-canvas text-xs font-bold px-4 py-2 rounded-lg inline-block">Request Custom Map Boundary →</a>
+                </div>
+            </div>
+
+            <!-- DAVARUS ADVISOR CARD -->
+            <div class="glass-panel p-6 flex items-center gap-4">
+                <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-16 h-16 rounded-full object-cover border-2 border-gold shadow-lg">
+                <div>
+                    <span class="text-[10px] font-bold text-gold uppercase">Texas Realtor® Assistance</span>
+                    <h4 class="font-serif text-lg text-white">Need Off-Market MLS Deals?</h4>
+                    <p class="text-xs text-muted mt-1">Davarus Bell accesses private DFW builder & seller inventory before it hits Zillow.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#08100E]/90 backdrop-blur-2xl border-t border-white/10 px-4 py-3 flex justify-around items-center text-center text-[10px]">
+        <a href="/" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🏡</span> Home
+        </a>
+        <a href="/search" class="text-gold flex flex-col items-center gap-1 font-semibold">
+            <span class="text-lg">🔍</span> Search
+        </a>
+        <a href="/buy" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">🔑</span> Pre-Qual
+        </a>
+        <a href="/portal" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">📋</span> Saved
+        </a>
+        <a href="/agent" class="text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <span class="text-lg">👤</span> Profile
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050914] py-6 text-center text-xs text-slate-500 border-t border-white/10 mb-16 lg:mb-0">
+        Only 1 Realty Group • License #0798476 • Equal Housing Opportunity
+    </footer>
+
+    <script>
+        function filterProperties() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(c => {
+                if (c.innerText.toLowerCase().includes(q)) {
+                    c.style.display = 'block';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+
+        function filterType(type) {
+            // Filter logic implementation
+        }
+    </script>
+</body>
+</html>
