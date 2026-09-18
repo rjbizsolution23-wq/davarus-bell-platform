@@ -86,9 +86,4 @@ app.get('/api/health', (c) => {
   });
 });
 
-// Fallback to Cloudflare Static Assets
-app.fetch = (req, env, executionCtx) => {
-  return app.request(req, env, executionCtx);
-};
-
 export default app;
