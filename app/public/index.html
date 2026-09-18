@@ -1,155 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davarus Bell | HGTV Realtor® & Texas Real Estate Strategist</title>
-    <meta name="description" content="Official website of Davarus Bell, HGTV-featured Texas Realtor®. Residential, Commercial, Land, ITIN Financing, and Relocation across Dallas-Fort Worth, Houston & Austin.">
-    <!-- Tailwind CSS CDN -->
+    <meta name="description" content="Official platform of Davarus Bell, HGTV Realtor®. Residential, Commercial, Land, ITIN Loans & Relocation across Texas.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        navy: '#0f172a',
-                        brandBlue: '#2563eb',
-                        sky: '#0ea5e9',
-                        gold: '#f59e0b'
-                    },
-                    fontFamily: {
-                        head: ['Space Grotesk', 'sans-serif'],
-                        body: ['Inter', 'sans-serif']
-                    }
+                    colors: { navy: '#0f172a', brandBlue: '#2563eb', sky: '#0ea5e9', gold: '#f59e0b', darkCard: '#1e293b' },
+                    fontFamily: { head: ['Space Grotesk', 'sans-serif'], body: ['Inter', 'sans-serif'] }
                 }
             }
         }
     </script>
+    <style>
+        .gradient-border { border-image: linear-gradient(to right, #2563eb, #0ea5e9) 1; }
+        .glow-blue { box-shadow: 0 0 35px -5px rgba(37, 99, 235, 0.3); }
+        .glow-gold { box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.3); }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-body antialiased selection:bg-brandBlue selection:text-white">
+<body class="bg-slate-950 text-slate-100 font-body antialiased selection:bg-brandBlue selection:text-white">
 
-    <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="bg-gradient-to-r from-brandBlue to-sky py-2.5 text-center text-xs sm:text-sm font-semibold text-white tracking-wide shadow-md">
-        📺 AS SEEN ON HGTV’S HOUSE HUNTERS • ⭐️ 5.0 ZILLOW RATED REALTOR® • 📱 CALL/TEXT: (817) 617-9654
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-brandBlue via-sky to-emerald-500 py-2 px-4 text-center text-xs sm:text-sm font-semibold text-white tracking-wide shadow-md flex justify-center items-center gap-3">
+        <span>📺 AS SEEN ON HGTV’S HOUSE HUNTERS</span>
+        <span class="hidden sm:inline">•</span>
+        <span class="hidden sm:inline">⭐️ 5.0 ZILLOW RATED REALTOR® (35 REVIEWS)</span>
+        <a href="tel:8176179654" class="underline hover:text-slate-200">📞 (817) 617-9654</a>
     </div>
 
-    <!-- NAVIGATION HEADER -->
-    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <!-- MAIN NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brandBlue to-sky flex items-center justify-center text-white font-head font-bold text-xl shadow-lg">DB</div>
+            <a href="/index.html" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brandBlue to-sky flex items-center justify-center text-white font-head font-extrabold text-2xl shadow-lg shadow-brandBlue/30">DB</div>
                 <div>
-                    <span class="font-head font-bold text-xl tracking-tight text-white block leading-none">DAVARUS BELL</span>
-                    <span class="text-[10px] text-sky font-medium uppercase tracking-widest block mt-1">HGTV Realtor® • Only 1 Realty Group</span>
+                    <span class="font-head font-extrabold text-xl tracking-tight text-white block leading-none">DAVARUS BELL</span>
+                    <span class="text-[10px] text-sky font-semibold uppercase tracking-widest block mt-1">HGTV Realtor® • Only 1 Realty Group</span>
                 </div>
             </a>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-                <a href="/buy.html" class="hover:text-sky transition">Buy a Home</a>
-                <a href="/sell.html" class="hover:text-sky transition">Sell Property</a>
+            
+            <div class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-300">
+                <a href="/buy.html" class="hover:text-sky transition">Buy & ITIN Quiz</a>
+                <a href="/sell.html" class="hover:text-sky transition">Seller Net Sheet</a>
                 <a href="/relocate.html" class="hover:text-sky transition">Move to Texas</a>
-                <a href="/speaking.html" class="hover:text-sky transition">Keynote Speaking</a>
+                <a href="/speaking.html" class="hover:text-sky transition">Keynotes & Media</a>
+                <a href="/admin.html" class="text-xs bg-slate-800 border border-slate-700 hover:border-sky text-slate-300 px-3 py-1.5 rounded-lg transition">🔒 CRM Login</a>
             </div>
-            <a href="/buy.html" class="bg-gradient-to-r from-brandBlue to-sky hover:opacity-95 text-white font-semibold text-sm px-5 py-2.5 rounded-lg shadow-lg shadow-brandBlue/20 transition transform active:scale-95">
-                Get Pre-Qualified →
-            </a>
+
+            <div class="flex items-center gap-3">
+                <a href="/buy.html" class="bg-gradient-to-r from-brandBlue to-sky hover:opacity-95 text-white font-head font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brandBlue/20 transition transform active:scale-95">
+                    Get Pre-Qualified →
+                </a>
+            </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 border-b border-slate-800">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_50%)]"></div>
+    <header class="relative py-20 lg:py-28 overflow-hidden bg-slate-950 border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.18),transparent_55%)]"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandBlue/10 border border-brandBlue/30 text-sky text-xs font-semibold tracking-wider uppercase">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-brandBlue/30 text-sky text-xs font-semibold tracking-wider uppercase shadow-inner">
                     ✨ Move Different. Build Wealth. Live Free.
                 </div>
-                <h1 class="font-head font-bold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
-                    Texas Real Estate Built On <span class="bg-gradient-to-r from-brandBlue via-sky to-emerald-400 bg-clip-text text-transparent">Transparency & Results.</span>
+                <h1 class="font-head font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-none">
+                    Texas Real Estate Built On <span class="bg-gradient-to-r from-brandBlue via-sky to-emerald-400 bg-clip-text text-transparent">Transparency & Power.</span>
                 </h1>
                 <p class="text-slate-400 text-lg sm:text-xl max-w-2xl leading-relaxed">
-                    Whether you are buying your first DFW home, utilizing ITIN financing, selling for top dollar, or relocating to Texas, Davarus Bell delivers direct communication and relentless negotiation.
+                    Top-producing Texas Realtor® Davarus Bell delivers relentless negotiation, ITIN/FHA loan mastery, and custom buyer & seller strategies across Dallas-Fort Worth, Houston, and Austin.
                 </p>
+
                 <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="/buy.html" class="bg-gradient-to-r from-brandBlue to-sky text-white font-head font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-brandBlue/25 hover:shadow-brandBlue/40 transition transform hover:-translate-y-0.5">
-                        Start 60-Sec Qualification Quiz
+                    <a href="/buy.html" class="bg-gradient-to-r from-brandBlue to-sky text-white font-head font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-brandBlue/30 hover:opacity-95 transition transform hover:-translate-y-0.5">
+                        Start 60-Sec Qualification Quiz →
                     </a>
-                    <a href="tel:8176179654" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-head font-bold text-base px-8 py-4 rounded-xl border border-slate-700 transition">
-                        📞 Direct Call: (817) 617-9654
+                    <a href="/sell.html" class="bg-slate-900 hover:bg-slate-800 text-slate-200 font-head font-bold text-base px-8 py-4 rounded-xl border border-slate-800 transition">
+                        Calculate Net Home Equity 📈
                     </a>
                 </div>
 
-                <!-- VERIFIED SOCIAL PROOF BADGES -->
-                <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-                    <div>
+                <!-- VERIFIED STATS -->
+                <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
                         <div class="font-head font-bold text-2xl text-white">5.0 ⭐</div>
                         <div class="text-xs text-slate-400">35 Zillow Reviews</div>
                     </div>
-                    <div>
-                        <div class="font-head font-bold text-2xl text-white">71.6k+</div>
-                        <div class="text-xs text-slate-400">Instagram Audience</div>
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="font-head font-bold text-2xl text-sky">71.6k+</div>
+                        <div class="text-xs text-slate-400">Instagram Followers</div>
                     </div>
-                    <div>
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
                         <div class="font-head font-bold text-2xl text-gold">HGTV</div>
                         <div class="text-xs text-slate-400">House Hunters Realtor®</div>
                     </div>
                 </div>
             </div>
 
-            <!-- HERO AUDIENCE CARD -->
+            <!-- INTERACTIVE QUICK SERVICE CARD -->
             <div class="lg:col-span-5">
-                <div class="bg-slate-800/80 border border-slate-700/80 p-8 rounded-2xl shadow-2xl backdrop-blur-xl relative">
-                    <div class="absolute -top-3 right-6 bg-gold text-slate-950 font-head font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
-                        Fast-Track Intake
+                <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-2xl backdrop-blur-xl relative glow-blue">
+                    <div class="absolute -top-3 right-6 bg-gradient-to-r from-gold to-amber-500 text-slate-950 font-head font-bold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                        Interactive Hub
                     </div>
-                    <h2 class="font-head font-bold text-2xl text-white mb-2">How Can Davarus Help You Today?</h2>
-                    <p class="text-slate-400 text-sm mb-6">Select your primary goal to get a personalized action plan:</p>
+                    <h2 class="font-head font-bold text-2xl text-white mb-2">Select Your Real Estate Goal</h2>
+                    <p class="text-slate-400 text-sm mb-6">Choose your objective below for an instant personalized strategy:</p>
                     
                     <div class="space-y-3">
-                        <a href="/buy.html" class="flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 hover:border-sky transition group">
+                        <a href="/buy.html" class="flex items-center justify-between p-4 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition group">
                             <div class="flex items-center gap-3">
-                                <span class="text-2xl">🔑</span>
+                                <div class="w-10 h-10 rounded-xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl">🔑</div>
                                 <div>
                                     <div class="font-semibold text-white group-hover:text-sky transition">First-Time Buyer / ITIN Loan</div>
-                                    <div class="text-xs text-slate-400">Get pre-qualified in under 60 seconds</div>
+                                    <div class="text-xs text-slate-400">Qualify in 60 seconds (FHA, VA, ITIN)</div>
                                 </div>
                             </div>
-                            <span class="text-slate-500 group-hover:text-sky">→</span>
+                            <span class="text-slate-500 group-hover:text-sky transition">→</span>
                         </a>
 
-                        <a href="/sell.html" class="flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 hover:border-sky transition group">
+                        <a href="/sell.html" class="flex items-center justify-between p-4 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition group">
                             <div class="flex items-center gap-3">
-                                <span class="text-2xl">🏡</span>
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">🏡</div>
                                 <div>
-                                    <div class="font-semibold text-white group-hover:text-sky transition">Sell My DFW Home</div>
-                                    <div class="text-xs text-slate-400">Get a Bell Seller Net Sheet & Home Value</div>
+                                    <div class="font-semibold text-white group-hover:text-sky transition">Sell My Texas Home</div>
+                                    <div class="text-xs text-slate-400">Get your Bell Seller Net Payout Sheet</div>
                                 </div>
                             </div>
-                            <span class="text-slate-500 group-hover:text-sky">→</span>
+                            <span class="text-slate-500 group-hover:text-sky transition">→</span>
                         </a>
 
-                        <a href="/relocate.html" class="flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 hover:border-sky transition group">
+                        <a href="/relocate.html" class="flex items-center justify-between p-4 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition group">
                             <div class="flex items-center gap-3">
-                                <span class="text-2xl">🤠</span>
+                                <div class="w-10 h-10 rounded-xl bg-sky/10 text-sky flex items-center justify-center text-xl">🤠</div>
                                 <div>
-                                    <div class="font-semibold text-white group-hover:text-sky transition">Relocate to Texas</div>
-                                    <div class="text-xs text-slate-400">Dallas, Houston, Austin & East Texas</div>
+                                    <div class="font-semibold text-white group-hover:text-sky transition">Texas Move Concierge</div>
+                                    <div class="text-xs text-slate-400">Relocating from MS, CA, NY to Texas</div>
                                 </div>
                             </div>
-                            <span class="text-slate-500 group-hover:text-sky">→</span>
+                            <span class="text-slate-500 group-hover:text-sky transition">→</span>
                         </a>
 
-                        <a href="/speaking.html" class="flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 hover:border-sky transition group">
+                        <a href="/speaking.html" class="flex items-center justify-between p-4 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition group">
                             <div class="flex items-center gap-3">
-                                <span class="text-2xl">🎤</span>
+                                <div class="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl">🎤</div>
                                 <div>
                                     <div class="font-semibold text-white group-hover:text-sky transition">Book Davarus for Keynote</div>
                                     <div class="text-xs text-slate-400">Fitness. Finance. Focus. Freedom.</div>
                                 </div>
                             </div>
-                            <span class="text-slate-500 group-hover:text-sky">→</span>
+                            <span class="text-slate-500 group-hover:text-sky transition">→</span>
                         </a>
                     </div>
                 </div>
@@ -158,33 +162,74 @@
         </div>
     </header>
 
-    <!-- 4 BRAND PILLARS -->
-    <section class="py-20 bg-slate-950 border-b border-slate-800">
+    <!-- INTERACTIVE DFW NEIGHBORHOOD SEARCH WIDGET -->
+    <section class="py-16 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-head font-bold text-3xl sm:text-4xl text-white">The 4 Pillars of Execution</h2>
-                <p class="text-slate-400 mt-4 text-base">Real estate is more than buying a house—it is the foundation of long-term freedom and legacy.</p>
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-sky text-xs font-bold uppercase tracking-widest">Market Intelligence</span>
+                <h2 class="font-head font-bold text-3xl sm:text-4xl text-white mt-2">Explore Texas Target Communities</h2>
+                <p class="text-slate-400 text-sm mt-2">Filter by region to inspect active market trends and price ranges:</p>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brandBlue transition">
-                    <div class="w-12 h-12 rounded-xl bg-brandBlue/10 text-brandBlue flex items-center justify-center font-bold text-xl mb-4">💪</div>
-                    <h3 class="font-head font-bold text-xl text-white mb-2">FITNESS</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">High physical energy and mental resilience that drive relentless work ethic for every client.</p>
+
+            <!-- INTERACTIVE FILTER TABS -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="marketTabs">
+                <button onclick="filterMarket('all')" class="market-tab bg-brandBlue text-white text-xs font-semibold px-4 py-2 rounded-xl border border-brandBlue">All Texas Markets</button>
+                <button onclick="filterMarket('dfw')" class="market-tab bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-4 py-2 rounded-xl border border-slate-700">Dallas-Fort Worth (DFW)</button>
+                <button onclick="filterMarket('frisco')" class="market-tab bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-4 py-2 rounded-xl border border-slate-700">Frisco & North Texas</button>
+                <button onclick="filterMarket('houston')" class="market-tab bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-4 py-2 rounded-xl border border-slate-700">Houston & Coast</button>
+                <button onclick="filterMarket('austin')" class="market-tab bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-4 py-2 rounded-xl border border-slate-700">Austin & Central TX</button>
+            </div>
+
+            <!-- CARDS GRID -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="marketGrid">
+                <div class="market-card dfw p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold text-sky uppercase">DFW Core</span>
+                        <span class="text-xs text-slate-400">Avg Price: $415k</span>
+                    </div>
+                    <h3 class="font-head font-bold text-xl text-white">Dallas & Richardson</h3>
+                    <p class="text-slate-400 text-xs mt-2">High demand residential, luxury builds, and strong rental yields. Excellent for first-time buyers and ITIN loans.</p>
+                    <a href="/buy.html" class="inline-block mt-4 text-xs font-semibold text-sky hover:underline">View Active Properties →</a>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-sky transition">
-                    <div class="w-12 h-12 rounded-xl bg-sky/10 text-sky flex items-center justify-center font-bold text-xl mb-4">💰</div>
-                    <h3 class="font-head font-bold text-xl text-white mb-2">FINANCE</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Understanding loans, equity, credit readiness, and property appreciation to turn housing into wealth.</p>
+
+                <div class="market-card frisco dfw p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold text-emerald-400 uppercase">North Texas</span>
+                        <span class="text-xs text-slate-400">Avg Price: $580k</span>
+                    </div>
+                    <h3 class="font-head font-bold text-xl text-white">Frisco & McKinney</h3>
+                    <p class="text-slate-400 text-xs mt-2">Top school districts, new construction communities, and rapid appreciation for relocating families.</p>
+                    <a href="/relocate.html" class="inline-block mt-4 text-xs font-semibold text-sky hover:underline">Explore Relocation Guide →</a>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-400 transition">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-400/10 text-emerald-400 flex items-center justify-center font-bold text-xl mb-4">🎯</div>
-                    <h3 class="font-head font-bold text-xl text-white mb-2">FOCUS</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Eliminating distractions and locking onto closing deals with zero friction and total transparency.</p>
+
+                <div class="market-card dfw p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold text-gold uppercase">Tarrant County</span>
+                        <span class="text-xs text-slate-400">Avg Price: $340k</span>
+                    </div>
+                    <h3 class="font-head font-bold text-xl text-white">Fort Worth & Mansfield</h3>
+                    <p class="text-slate-400 text-xs mt-2">Affordable single-family homes, USDA zero-down eligibility areas, and rapid suburban expansion.</p>
+                    <a href="/buy.html" class="inline-block mt-4 text-xs font-semibold text-sky hover:underline">Get Pre-Qualified →</a>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-gold transition">
-                    <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center font-bold text-xl mb-4">🦅</div>
-                    <h3 class="font-head font-bold text-xl text-white mb-2">FREEDOM</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Creating financial stability and independence for your family through real estate ownership.</p>
+
+                <div class="market-card houston p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold text-sky uppercase">Houston Region</span>
+                        <span class="text-xs text-slate-400">Avg Price: $325k</span>
+                    </div>
+                    <h3 class="font-head font-bold text-xl text-white">Greater Houston & Coast</h3>
+                    <p class="text-slate-400 text-xs mt-2">Commercial real estate, multi-family investments, and spacious suburban home communities.</p>
+                    <a href="/buy.html" class="inline-block mt-4 text-xs font-semibold text-sky hover:underline">Explore Houston Listings →</a>
+                </div>
+
+                <div class="market-card austin p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-sky transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold text-emerald-400 uppercase">Central Texas</span>
+                        <span class="text-xs text-slate-400">Avg Price: $490k</span>
+                    </div>
+                    <h3 class="font-head font-bold text-xl text-white">Austin & Killeen</h3>
+                    <p class="text-slate-400 text-xs mt-2">Tech corridor relocation, VA military loan buyers, and high-growth land investment deals.</p>
+                    <a href="/relocate.html" class="inline-block mt-4 text-xs font-semibold text-sky hover:underline">Get Move Concierge →</a>
                 </div>
             </div>
         </div>
@@ -192,20 +237,37 @@
 
     <!-- FOOTER -->
     <footer class="bg-slate-950 py-12 border-t border-slate-800 text-slate-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
-                <p class="font-head font-bold text-white text-base">DAVARUS BELL • TEXAS REALTOR®</p>
-                <p class="mt-1">Only 1 Realty Group | License #0798476 | Dallas, TX</p>
-                <p class="mt-2 text-slate-500">Texas Real Estate Commission Consumer Protection Notice & Information About Brokerage Services (IABS) Compliant.</p>
+                <p class="font-head font-bold text-white text-base">DAVARUS BELL • HGTV REALTOR®</p>
+                <p class="mt-1">Only 1 Realty Group | License #0798476 | Dallas, Texas</p>
+                <p class="mt-1 text-slate-500">Texas Real Estate Commission (TREC) Consumer Protection Notice & Equal Housing Opportunity Compliant.</p>
             </div>
-            <div class="flex gap-4 text-sm font-semibold text-sky">
+            <div class="flex gap-4 font-semibold text-sky">
                 <a href="/buy.html">Buy</a>
                 <a href="/sell.html">Sell</a>
                 <a href="/relocate.html">Relocate</a>
-                <a href="/speaking.html">Speaking</a>
+                <a href="/speaking.html">Keynotes</a>
+                <a href="/admin.html" class="text-slate-300 hover:text-white">CRM Admin</a>
             </div>
         </div>
     </footer>
 
+    <script>
+        function filterMarket(category) {
+            const tabs = document.querySelectorAll('.market-tab');
+            tabs.forEach(t => t.className = 'market-tab bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold px-4 py-2 rounded-xl border border-slate-700');
+            event.target.className = 'market-tab bg-brandBlue text-white text-xs font-semibold px-4 py-2 rounded-xl border border-brandBlue';
+
+            const cards = document.querySelectorAll('.market-card');
+            cards.forEach(c => {
+                if (category === 'all' || c.classList.contains(category)) {
+                    c.style.display = 'block';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
