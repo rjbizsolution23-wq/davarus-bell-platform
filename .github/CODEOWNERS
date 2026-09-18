@@ -1,0 +1,11 @@
+# Global Code Owners
+* @rjbizsolution23-wq
+
+# Architecture & Backend
+/app/src/ @rjbizsolution23-wq
+/app/wrangler.jsonc @rjbizsolution23-wq
+/app/schema.sql @rjbizsolution23-wq
+
+# Security & Governance
+/SECURITY.md @rjbizsolution23-wq
+/.github/ @rjbizsolution23-wq
