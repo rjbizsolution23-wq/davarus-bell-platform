@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davarus Bell | Estate Glass OS — Luxury Texas Real Estate</title>
-    <meta name="description" content="Estate Glass OS by Davarus Bell, HGTV Realtor®. Intelligent property search, luxury relocation, ITIN loans & seller advantage across Texas.">
+    <title>Davarus Bell | Estate Glass OS — Luxury Texas Real Estate & ITIN Financing</title>
+    <meta name="description" content="Estate Glass OS by Davarus Bell, HGTV Realtor®. Intelligent property search, luxury relocation, ITIN loans & seller advantage across Dallas-Fort Worth, Texas.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: DM Serif Display & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: DM Serif Display, Inter & Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         gold: { DEFAULT: '#D8B66A', dark: '#B8924B' },
-                        estate: { DEFAULT: '#18352E', light: '#80A99D' },
-                        canvas: '#08100E',
-                        surface: 'rgba(16, 32, 27, 0.75)',
-                        muted: '#AAB5B0',
-                        success: '#3FD28B'
+                        rjblue: { DEFAULT: '#2563eb', dark: '#1e3a8a', sky: '#0ea5e9' },
+                        navy: { DEFAULT: '#0f172a', surface: '#1e293b' },
+                        canvas: '#0f172a',
+                        muted: '#94a3b8',
+                        success: '#10b981'
                     },
                     fontFamily: {
                         serif: ['DM Serif Display', 'serif'],
-                        sans: ['Inter', 'sans-serif']
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace']
                     }
                 }
             }
@@ -31,15 +32,15 @@
     </script>
     <style>
         .glass-panel {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(216, 182, 106, 0.25);
             border-radius: 24px;
-            box-shadow: 0 24px 70px rgba(7, 18, 14, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: 0 24px 70px rgba(15, 23, 42, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(24px) saturate(150%);
             -webkit-backdrop-filter: blur(24px) saturate(150%);
         }
-        .glass-solid {
-            background: #10201B;
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .shimmer-gold {
@@ -49,65 +50,73 @@
         }
         .shimmer-gold:hover {
             background-position: right center;
-            box-shadow: 0 10px 25px -5px rgba(216, 182, 106, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(216, 182, 106, 0.5);
+            transform: translateY(-2px);
+        }
+        .shimmer-blue {
+            background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            transition: all 0.3s ease;
+        }
+        .shimmer-blue:hover {
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5);
             transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-[#08100E] text-[#F6F7F4] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-canvas">
+<body class="bg-[#0f172a] text-[#f8fafc] font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-gold selection:text-navy pb-20 lg:pb-0">
 
     <!-- ANNOUNCEMENT BAR -->
-    <div class="bg-gradient-to-r from-estate via-[#10201B] to-estate border-b border-white/10 py-2.5 px-4 text-center text-xs font-medium text-slate-200 flex justify-center items-center gap-3">
-        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-gold animate-ping"></span> AS SEEN ON HGTV’S HOUSE HUNTERS</span>
+    <div class="bg-gradient-to-r from-navy via-[#1e3a8a] to-navy border-b border-white/10 py-2.5 px-4 text-center text-xs font-medium text-slate-200 flex justify-center items-center gap-3">
+        <span class="flex items-center gap-1.5 font-mono"><span class="w-2 h-2 rounded-full bg-gold animate-ping"></span> AS SEEN ON HGTV’S HOUSE HUNTERS</span>
         <span class="hidden sm:inline">•</span>
-        <span class="hidden sm:inline">⭐️ 5.0 ZILLOW RATED REALTOR® (35 REVIEWS)</span>
+        <span class="hidden sm:inline font-mono">⭐️ 5.0 ZILLOW RATED REALTOR® (35 REVIEWS)</span>
         <a href="tel:8176179654" class="text-gold hover:underline font-bold">📞 (817) 617-9654</a>
     </div>
 
     <!-- FROSTED GLASS NAVIGATION -->
-    <nav class="sticky top-0 z-50 bg-[#08100E]/75 backdrop-blur-2xl border-b border-white/10">
+    <nav class="sticky top-0 z-50 bg-[#0f172a]/85 backdrop-blur-2xl border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="/" class="flex items-center gap-3.5 group">
                 <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-11 h-11 rounded-full object-cover border-2 border-gold shadow-lg group-hover:scale-105 transition duration-300">
                 <div>
                     <span class="font-serif text-2xl tracking-tight text-white block leading-none">DAVARUS BELL</span>
-                    <span class="text-[10px] text-gold font-semibold uppercase tracking-widest block mt-1">Estate Glass OS • HGTV Realtor®</span>
+                    <span class="text-[10px] text-gold font-mono font-semibold uppercase tracking-widest block mt-1">Estate Glass OS • HGTV Realtor®</span>
                 </div>
             </a>
             
-            <div class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-300">
+            <div class="hidden lg:flex items-center gap-7 font-medium text-xs text-slate-300">
                 <a href="/search" class="hover:text-gold transition">Property Search</a>
                 <a href="/buy" class="hover:text-gold transition">Buyer & ITIN Quiz</a>
                 <a href="/sell" class="hover:text-gold transition">Seller Advantage</a>
                 <a href="/relocate" class="hover:text-gold transition">Move to Texas</a>
+                <a href="/speaking" class="hover:text-gold transition">Media & Reels</a>
                 <a href="/agent" class="hover:text-gold transition">Agent Profile</a>
                 <a href="/portal" class="hover:text-gold transition">Buyer Portal</a>
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="/buy" class="shimmer-gold text-canvas font-bold text-xs px-5 py-2.5 rounded-full shadow-lg uppercase tracking-wider">
+                <a href="/buy" class="shimmer-gold text-navy font-bold text-xs px-5 py-2.5 rounded-full shadow-lg uppercase tracking-wider font-mono">
                     Get Pre-Qualified →
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- CINEMATIC HERO SECTION WITH CONTROLLED GLASS SEARCH CONSOLE -->
+    <!-- CINEMATIC HERO SECTION -->
     <header class="relative py-20 lg:py-28 overflow-hidden border-b border-white/10">
-        <!-- Cinematic Background Photography Overlay -->
-        <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80');"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-[#08100E] via-[#08100E]/90 to-[#08100E] z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#0f172a]/95 to-[#0f172a] z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
             
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gold text-xs font-medium uppercase tracking-widest backdrop-blur-md">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-gold/30 text-gold text-xs font-mono font-medium uppercase tracking-widest backdrop-blur-md">
                     👑 ESTATE GLASS OS • DAVARUS BELL PLATFORM
                 </div>
                 <h1 class="font-serif text-5xl sm:text-7xl text-white tracking-tight leading-none">
                     Find More Than A Property. <br><span class="italic text-gold">Find Your Next Chapter.</span>
                 </h1>
-                <p class="text-muted text-base sm:text-lg max-w-2xl leading-relaxed">
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
                     Combining luxury editorial property search, ITIN loan mastery, and high-stakes negotiation across Dallas-Fort Worth, Houston, and Austin.
                 </p>
 
@@ -115,43 +124,43 @@
                 <div class="pt-6 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
                     <div class="glass-panel p-4">
                         <div class="font-serif text-2xl text-white">5.0 ⭐</div>
-                        <div class="text-[11px] text-muted">35 Zillow Reviews</div>
+                        <div class="text-[11px] text-slate-400 font-mono">35 Zillow Reviews</div>
                     </div>
                     <div class="glass-panel p-4">
                         <div class="font-serif text-2xl text-gold">71.6k+</div>
-                        <div class="text-[11px] text-muted">Instagram Audience</div>
+                        <div class="text-[11px] text-slate-400 font-mono">Instagram Audience</div>
                     </div>
                     <div class="glass-panel p-4">
                         <div class="font-serif text-2xl text-emerald-400">HGTV</div>
-                        <div class="text-[11px] text-muted">House Hunters Realtor®</div>
+                        <div class="text-[11px] text-slate-400 font-mono">House Hunters Realtor®</div>
                     </div>
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: CONTROLLED GLASS SEARCH CONSOLE -->
+            <!-- RIGHT COLUMN: SEARCH CONSOLE -->
             <div class="lg:col-span-5">
                 <div class="glass-panel p-8 relative">
                     <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
                         <div class="flex items-center gap-3">
-                            <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+                            <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-12 h-12 rounded-full object-cover border-2 border-gold shadow-md">
                             <div>
                                 <h3 class="font-serif text-xl text-white">Davarus Bell</h3>
-                                <p class="text-xs text-gold">HGTV Realtor® • License #0798476</p>
+                                <p class="text-xs text-gold font-mono">HGTV Realtor® • License #0798476</p>
                             </div>
                         </div>
-                        <span class="text-xs text-muted uppercase font-mono">Live Search</span>
+                        <span class="text-xs text-slate-400 uppercase font-mono">Live Search</span>
                     </div>
 
                     <form action="/search" method="GET" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-muted mb-1 uppercase tracking-wider">Natural Language Search</label>
-                            <input type="text" name="q" placeholder="City, ZIP, Neighborhood, or MLS..." class="w-full bg-[#10201B] border border-white/10 rounded-xl p-3.5 text-white text-sm focus:border-gold focus:outline-none">
+                            <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider font-mono">Natural Language Search</label>
+                            <input type="text" name="q" placeholder="City, ZIP, Neighborhood, or MLS..." class="w-full bg-[#1e293b] border border-white/10 rounded-xl p-3.5 text-white text-sm focus:border-gold focus:outline-none">
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-xs font-semibold text-muted mb-1 uppercase tracking-wider">Goal</label>
-                                <select name="type" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider font-mono">Goal</label>
+                                <select name="type" class="w-full bg-[#1e293b] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
                                     <option value="buy">Buy First Home</option>
                                     <option value="itin">ITIN Financing</option>
                                     <option value="sell">Sell Property</option>
@@ -159,8 +168,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-muted mb-1 uppercase tracking-wider">Price Range</label>
-                                <select name="price" class="w-full bg-[#10201B] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider font-mono">Price Range</label>
+                                <select name="price" class="w-full bg-[#1e293b] border border-white/10 rounded-xl p-3.5 text-white text-xs focus:border-gold">
                                     <option value="350k">$250k - $350k</option>
                                     <option value="500k" selected>$350k - $500k</option>
                                     <option value="750k">$500k - $750k</option>
@@ -169,7 +178,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full shimmer-gold text-canvas font-bold text-sm py-4 rounded-xl shadow-xl uppercase tracking-wider mt-2">
+                        <button type="submit" class="w-full shimmer-gold text-navy font-bold text-sm py-4 rounded-xl shadow-xl uppercase tracking-wider mt-2 font-mono">
                             Explore Available Properties →
                         </button>
                     </form>
@@ -179,8 +188,226 @@
         </div>
     </header>
 
-    <!-- MOBILE BOTTOM NAVIGATION (ESTATE GLASS OS APP BEHAVIOR) -->
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#08100E]/90 backdrop-blur-2xl border-t border-white/10 px-4 py-3 flex justify-around items-center text-center text-[10px]">
+    <!-- SECTION 2: FEATURED PROPERTIES CAROUSEL GRID -->
+    <section class="py-20 border-b border-white/10 bg-[#0b1329]/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+                <div>
+                    <span class="text-gold font-mono text-xs uppercase tracking-widest font-bold block mb-2">Exclusive Texas Portfolio</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-white">Featured Luxury & ITIN Listings</h2>
+                </div>
+                <a href="/search" class="text-gold hover:underline text-xs font-mono uppercase tracking-wider mt-4 md:mt-0">View All Listings (12+ Available) →</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- PROPERTY 1 -->
+                <div class="glass-panel overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Frisco Luxury Estate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-navy/90 backdrop-blur-md text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/40">
+                            ITIN ELIGIBLE • FHA 3.5%
+                        </div>
+                        <div class="absolute bottom-4 left-4 font-serif text-2xl text-white font-bold drop-shadow-md">
+                            $625,000
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-xl text-white">The Legacy Estate at Frisco</h3>
+                        <p class="text-xs text-slate-300">4 Beds • 3.5 Baths • 3,450 SqFt • Frisco, TX 75034</p>
+                        <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs font-mono">
+                            <span class="text-emerald-400">Est. $3,450 / mo</span>
+                            <a href="/property" class="text-gold hover:underline font-bold">Tour Property →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROPERTY 2 -->
+                <div class="glass-panel overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Fort Worth Residence" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-navy/90 backdrop-blur-md text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/40">
+                            FIRST-TIME BUYER GRANT
+                        </div>
+                        <div class="absolute bottom-4 left-4 font-serif text-2xl text-white font-bold drop-shadow-md">
+                            $395,000
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-xl text-white">Trinity Oaks Sanctuary</h3>
+                        <p class="text-xs text-slate-300">3 Beds • 2.5 Baths • 2,210 SqFt • Fort Worth, TX 76109</p>
+                        <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs font-mono">
+                            <span class="text-emerald-400">Est. $2,280 / mo</span>
+                            <a href="/property" class="text-gold hover:underline font-bold">Tour Property →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROPERTY 3 -->
+                <div class="glass-panel overflow-hidden group hover:border-gold transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Prosper Executive Home" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-navy/90 backdrop-blur-md text-gold text-[10px] font-mono font-bold px-3 py-1 rounded-full border border-gold/40">
+                            NEW CONSTRUCTION BUILD
+                        </div>
+                        <div class="absolute bottom-4 left-4 font-serif text-2xl text-white font-bold drop-shadow-md">
+                            $789,000
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-xl text-white">Windsong Ranch Masterpiece</h3>
+                        <p class="text-xs text-slate-300">5 Beds • 4 Baths • 4,100 SqFt • Prosper, TX 75078</p>
+                        <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs font-mono">
+                            <span class="text-emerald-400">Est. $4,390 / mo</span>
+                            <a href="/property" class="text-gold hover:underline font-bold">Tour Property →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SOCIAL MEDIA REELS & MEDIA CONTENT HUB -->
+    <section class="py-20 border-b border-white/10 bg-[#080d1a]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+                <div>
+                    <span class="text-gold font-mono text-xs uppercase tracking-widest font-bold block mb-2">📸 @DAVARUSBELL SOCIAL EMPIRE (71.6K+ FOLLOWERS)</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-white">Viral Texas Real Estate & ITIN Reels</h2>
+                </div>
+                <div class="flex gap-3 mt-4 md:mt-0 font-mono text-xs">
+                    <a href="https://www.instagram.com/davarusbell" target="_blank" rel="noopener" class="shimmer-gold text-navy font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                        Follow @davarusbell →
+                    </a>
+                    <a href="https://www.tiktok.com/@rick_jeff_solution" target="_blank" rel="noopener" class="bg-navy border border-white/10 text-slate-300 font-bold px-4 py-2 rounded-full hover:border-gold">
+                        TikTok Channel
+                    </a>
+                </div>
+            </div>
+
+            <!-- REELS SHOWCASE GRID -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- REEL CARD 1 -->
+                <div class="glass-panel p-4 flex flex-col justify-between group hover:border-gold transition">
+                    <div class="relative rounded-2xl overflow-hidden mb-4 bg-navy aspect-[9/16] flex items-center justify-center">
+                        <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="ITIN Loans Reel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-red-600/90 backdrop-blur-md text-white font-mono text-[9px] font-bold px-2.5 py-1 rounded-full uppercase flex items-center gap-1">
+                            <span>▶</span> 14.2K VIEWS
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 text-left">
+                            <span class="text-[10px] text-gold font-mono uppercase font-bold">ITIN MASTERCLASS</span>
+                            <h4 class="font-serif text-sm text-white line-clamp-2">"How to buy your first home in Texas with an ITIN number and zero SSN required."</h4>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/davarusbell" target="_blank" class="text-xs font-mono text-gold hover:underline font-bold text-center block">
+                        Watch Reel on IG →
+                    </a>
+                </div>
+
+                <!-- REEL CARD 2 -->
+                <div class="glass-panel p-4 flex flex-col justify-between group hover:border-gold transition">
+                    <div class="relative rounded-2xl overflow-hidden mb-4 bg-navy aspect-[9/16] flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="HGTV House Hunters Reel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-emerald-600/90 backdrop-blur-md text-white font-mono text-[9px] font-bold px-2.5 py-1 rounded-full uppercase flex items-center gap-1">
+                            <span>📺</span> 38.5K VIEWS
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 text-left">
+                            <span class="text-[10px] text-emerald-400 font-mono uppercase font-bold">HGTV HOUSE HUNTERS</span>
+                            <h4 class="font-serif text-sm text-white line-clamp-2">"Behind the scenes on HGTV showing luxury Frisco and Prosper estates!"</h4>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/davarusbell" target="_blank" class="text-xs font-mono text-gold hover:underline font-bold text-center block">
+                        Watch Reel on IG →
+                    </a>
+                </div>
+
+                <!-- REEL CARD 3 -->
+                <div class="glass-panel p-4 flex flex-col justify-between group hover:border-gold transition">
+                    <div class="relative rounded-2xl overflow-hidden mb-4 bg-navy aspect-[9/16] flex items-center justify-center">
+                        <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Mindset Reel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-blue-600/90 backdrop-blur-md text-white font-mono text-[9px] font-bold px-2.5 py-1 rounded-full uppercase flex items-center gap-1">
+                            <span>🔥</span> 52.1K VIEWS
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 text-left">
+                            <span class="text-[10px] text-sky-400 font-mono uppercase font-bold">4 PILLARS MINDSET</span>
+                            <h4 class="font-serif text-sm text-white line-clamp-2">"From top Texas car salesman to luxury realtor — Fitness, Finance, Focus & Freedom."</h4>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/davarusbell" target="_blank" class="text-xs font-mono text-gold hover:underline font-bold text-center block">
+                        Watch Reel on IG →
+                    </a>
+                </div>
+
+                <!-- REEL CARD 4 -->
+                <div class="glass-panel p-4 flex flex-col justify-between group hover:border-gold transition">
+                    <div class="relative rounded-2xl overflow-hidden mb-4 bg-navy aspect-[9/16] flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Relocation Reel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-purple-600/90 backdrop-blur-md text-white font-mono text-[9px] font-bold px-2.5 py-1 rounded-full uppercase flex items-center gap-1">
+                            <span>✈️</span> 29.8K VIEWS
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 text-left">
+                            <span class="text-[10px] text-purple-300 font-mono uppercase font-bold">RELOCATION GUIDE</span>
+                            <h4 class="font-serif text-sm text-white line-clamp-2">"Why families moving from California to DFW are keeping an extra $12k/yr in state taxes."</h4>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/davarusbell" target="_blank" class="text-xs font-mono text-gold hover:underline font-bold text-center block">
+                        Watch Reel on IG →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: DAVARUS BELL'S 4 PILLARS & HGTV STORY -->
+    <section class="py-20 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 relative">
+                <div class="relative z-10 rounded-3xl overflow-hidden border-2 border-gold shadow-2xl">
+                    <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell HGTV" class="w-full h-auto object-cover">
+                </div>
+                <div class="absolute -bottom-6 -right-6 z-20 glass-panel p-5 hidden sm:block">
+                    <div class="text-xs text-gold font-mono uppercase font-bold">Featured On</div>
+                    <div class="font-serif text-2xl text-white">HGTV House Hunters</div>
+                    <div class="text-[10px] text-slate-400">National Real Estate Personality</div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-gold font-mono text-xs uppercase tracking-widest font-bold">The Davarus Bell Standard</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white">From Incarceration to Inspiration. Built on 4 Pillars.</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Davarus Bell isn't just an agent — he is a master negotiator, top Texas car salesman turned premier HGTV Realtor®, and an inspirational advocate for family wealth building.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                    <div class="glass-panel p-5">
+                        <div class="text-gold font-serif text-2xl mb-1">01. Fitness</div>
+                        <p class="text-xs text-slate-300">Relentless discipline and physical excellence that fuels peak negotiation energy.</p>
+                    </div>
+                    <div class="glass-panel p-5">
+                        <div class="text-gold font-serif text-2xl mb-1">02. Finance</div>
+                        <p class="text-xs text-slate-300">Mastery of ITIN loans, FHA grants, seller equity net sheets, and wealth generation.</p>
+                    </div>
+                    <div class="glass-panel p-5">
+                        <div class="text-gold font-serif text-2xl mb-1">03. Focus</div>
+                        <p class="text-xs text-slate-300">Unwavering commitment to client goals with 60-second speed-to-lead communication.</p>
+                    </div>
+                    <div class="glass-panel p-5">
+                        <div class="text-gold font-serif text-2xl mb-1">04. Freedom</div>
+                        <p class="text-xs text-slate-300">Helping Texas families lock in homeownership as their ultimate generational foundation.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0f172a]/95 backdrop-blur-2xl border-t border-white/10 px-4 py-3 flex justify-around items-center text-center text-[10px]">
         <a href="/" class="text-gold flex flex-col items-center gap-1 font-semibold">
             <span class="text-lg">🏡</span> Home
         </a>
@@ -199,20 +426,21 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-[#050914] py-12 border-t border-white/10 text-muted text-xs mb-16 lg:mb-0">
+    <footer class="bg-[#050914] py-12 border-t border-white/10 text-slate-400 text-xs mb-16 lg:mb-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-4">
                 <img src="/images/har_com_headshot.jpg" onerror="this.src='https://pics.harstatic.com/realtors/ntreis-0798476_400x400.jpg'" alt="Davarus Bell" class="w-10 h-10 rounded-full object-cover border border-gold">
                 <div>
                     <p class="font-serif text-lg text-white">DAVARUS BELL • ESTATE GLASS OS</p>
-                    <p class="text-slate-500">Only 1 Realty Group | License #0798476 | Dallas, Texas</p>
+                    <p class="text-slate-500 font-mono">Only 1 Realty Group | License #0798476 | Dallas, Texas</p>
                 </div>
             </div>
-            <div class="flex flex-wrap gap-4 font-semibold text-gold text-xs">
+            <div class="flex flex-wrap gap-4 font-semibold text-gold text-xs font-mono">
                 <a href="/search">Search</a>
                 <a href="/buy">Buy & ITIN</a>
                 <a href="/sell">Sell Net Sheet</a>
                 <a href="/relocate">Relocate</a>
+                <a href="/speaking">Media & Reels</a>
                 <a href="/agent">Agent Bio</a>
                 <a href="/portal">Buyer Portal</a>
                 <a href="/admin">CRM Admin</a>
